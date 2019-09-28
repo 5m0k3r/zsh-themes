@@ -11,12 +11,11 @@ ZSH_THEME_RUBY_PROMPT_PREFIX="%{$fg_bold[red]%}‹"
 ZSH_THEME_RUBY_PROMPT_SUFFIX="›%{$reset_color%}"
 
 
-PROMPT="%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info) ☪ %{$fg_bold[red]%}%*%{$reset_color%}
+PROMPT="%{$fg_bold[green]%}%~%{$reset_color%} ☪ %{$fg_bold[red]%}%*%{$reset_color%}
 $ "
 if [[ "$USER" == "root" ]]; then
-PROMPT="%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info) ☪ %{$fg_bold[red]%}%*%{$reset_color%}
+PROMPT="%{$fg_bold[green]%}%~%{$reset_color%} ☪ %{$fg_bold[red]%}%*%{$reset_color%}
 %{$fg_bold[yellow]%}%  ⚡ # %{$reset_color%} "
 fi
 
-RPROMPT='$(ruby_prompt_info)'
-
+RPROMPT='$(git_prompt_info)'
