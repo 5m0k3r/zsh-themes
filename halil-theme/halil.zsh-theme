@@ -7,15 +7,16 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-ZSH_THEME_RUBY_PROMPT_PREFIX="%{$fg_bold[red]%}‹"
-ZSH_THEME_RUBY_PROMPT_SUFFIX="›%{$reset_color%}"
-
-
-PROMPT="%{$fg_bold[green]%}%~%{$reset_color%} ☪ %{$fg_bold[red]%}%*%{$reset_color%}
-$ "
-if [[ "$USER" == "root" ]]; then
-PROMPT="%{$fg_bold[green]%}%~%{$reset_color%} ☪ %{$fg_bold[red]%}%*%{$reset_color%}
-%{$fg_bold[yellow]%}%  ⚡ # %{$reset_color%} "
-fi
-
+function prompt_char {
+case $USER in
+	root)
+		echo "%{$fg_bold[yellow]%}%  ⚡ # %{$reset_color%} "
+	;;
+	*)
+		echo " $ "
+	;;
+esac
+} 
+PROMPT="%{$fg_bold[green]%} %2~%{$reset_color%} ☪ %{$fg_bold[red]%}%*%{$reset_color%}
+$(prompt_char)%{$reset_color%} "
 RPROMPT='$(git_prompt_info)'
