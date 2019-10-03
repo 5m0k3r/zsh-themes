@@ -16,3 +16,22 @@ ZSH_THEME="halil"
 
 ## Halil Theme Preview:
 ![](zsh-theme-halil-thumb.gif)
+
+### To Upgrade Oh-My-zsh
+Go to root folder of Oh-My-zsh 
+```
+cd ~/.oh-my-zsh/
+```
+Stack the halil theme 
+```
+git stack
+```
+Upgrade Oh-My-zsh
+```
+bash tools/upgrade.sh
+```
+Then, return halil theme
+```
+git stack pop
+```
+Enjoy!
