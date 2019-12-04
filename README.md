@@ -24,7 +24,7 @@ cd ~/.oh-my-zsh/
 ```
 Stack the halil theme 
 ```
-git stack
+git stash
 ```
 Upgrade Oh-My-zsh
 ```
@@ -32,6 +32,6 @@ bash tools/upgrade.sh
 ```
 Then, return halil theme
 ```
-git stack pop
+git stash pop
 ```
 Enjoy!
